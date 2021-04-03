@@ -12,24 +12,24 @@
 
 # Custom Values - Ensure you set these to specific values either relating to you organisation or required by Xello
 
-$WorkingDirectory = "N:\Tools\Scripts\Xello\Public\Xello Sync"                      # This is root directory where these files are installed. 
+$WorkingDirectory = "C:\Xello Sync"                      # This is root directory where these files are installed. 
 $SimsDotDir = "C:\Program Files (x86)\SIMS\SIMS .net\"   # Sims.Net Install Dir (don't forget the space!)
-$SimsUser = "AutoReports"                                # Sims Username Name - Must have "Third Party Reporting" + "Scheduled Reports" Group Permissions + something like "Class Teacher"
-$SimsPassword = "dEsrf3gyu36fwebIk"                      # Sims Password
-$SimsServer = "mhs-sims2016\sims2014"                    # SQL Sever Name (<hostname>\<SQL_instance_name>).  Can also be found in your $SimsDotDir\connect.ini file 
+$SimsUser = "Sims Username"                              # Sims Username Name - Must have "Third Party Reporting" + "Scheduled Reports" Group Permissions + something like "Class Teacher"
+$SimsPassword = "Sims Password"                          # Sims Password
+$SimsServer = "<hostname>\<SQL_instance_name>"           # SQL Sever Name (<hostname>\<SQL_instance_name>).  Can also be found in your $SimsDotDir\connect.ini file 
 $SimsDatabase = "sims"                                   # Sims Database name (almost always "sims"). Can also be found in your $SimsDotDir\connect.ini file
 $SimsReport  =  "Xello Student Export"                   # Sims Xello Export Report name.This won't need changinf if you've inported the included "Xello Student Export.RptDef" report definition
 $OutFile = ".\FTP Upload Files\StudentExport.csv"        # Sims Export Filename
 $ftpLocation = 'ftp.xello.co.uk'                         # Xello FTP Host Address
 $ftpPort = '22'                                          # Xello FTP Port, currently port 22, SSH
-$ftpUser = 'marple'                                      # School Xello FTP Username, this is useually ther shool name  
-$ftpPassword = 'yzj0w57h!'                                # School Xello FTP Password. This will have been provided by Xello.
+$ftpUser = 'Xello Username'                              # School Xello FTP Username, this is useually ther shool name  
+$ftpPassword = 'Xellow Password'                         # School Xello FTP Password. This will have been provided by Xello.
 $ftpGetCommandFile = '.\PSFTP\ftpGetCommands.txt'        # Temp file to store batch FTP command. There should be no need to change this but script required write permissions. 
 $SimsExportFile = '.\FTP Upload Files\StudentExport.csv' # File that contrail export data from MIS Report. 
 $FtpUploadFile = ".\FTP Upload Files\Student.csv"        # Processed file for upload, should be called Student.csv. It inncludes required field not held in MIS (CurrentSchoolCode and PreRegSchoolCode) and corrects date format.
 $PSFTP_Path = ".\PSFTP\psftp.exe"                        # PSFTP.exe file path
 $LogFile = ".\LastRunLog.txt"                            # Log file location - This file will contain log of commands run by PSFTP.exe and any errors during the last run ONLY of this script. 
-$SchoolCode = "106138"                                   # School Code - Must match value contained in School.csv
+$SchoolCode = "SchoolCode"                               # School Code - Must match value contained in School.csv
 
 # ---------------- Do not edit anything below this line ----------------
 
