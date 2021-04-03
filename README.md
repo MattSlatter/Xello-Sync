@@ -11,7 +11,7 @@ Author: Mathew Slatter (Matt.Slatter@marplehall.stockport.sch.uk)
 **SIMS_XelloSync.ps1** - Powershell file containing Sync code  
 **README** - This File  
 **LICENCE** - GNU v3 Licence File  
-**.\PSFTP\psftp.exe** - Copy of PSFTP.exe [https://www.chiark.greenend.org.uk/~sgtatham/putty/]  
+**.\PSFTP\psftp.exe** - Copy of PSFTP.exe (https://www.chiark.greenend.org.uk/~sgtatham/putty/)  
 **.\PSFTP\LICENCE.txt** - Licence file for PSFTP.exe  
 **.\Scheduled Task - Example\Xello Sims Student Sync.xml** - Example Scheduled Task to run the Sync  
 **.\Sims Report Definition** - Example\Xello Student Export.RptDef - Example Sims Report Definition to export the required data  
@@ -21,7 +21,7 @@ Author: Mathew Slatter (Matt.Slatter@marplehall.stockport.sch.uk)
 
 	1. Sims must be installed on the devices that will be running the Sync. It can be a client or server (although I would recommend not the actual Sims Server)
 	2. A Sims user account capable of running the export. It must have "Third Party Reporting" + "Scheduled Reports" Group Permissions + something like "Class Teacher" so it has permissions to the required student data.
-	3. A School.csv file must have uploaded to Xello [https://help.xello.world/article/944-create-student-data-files]
+	3. A School.csv file must have uploaded to Xello (https://help.xello.world/article/944-create-student-data-files)
 
 ## Installation
 
