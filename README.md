@@ -9,13 +9,13 @@ Author: Mathew Slatter (Matt.Slatter@marplehall.stockport.sch.uk)
 ## Contents
 
 **SIMS_XelloSync.ps1** - Powershell file containing Sync code  
-**README.txt** - This File  
-**LICENCE.txt** - GNU v3 Licence File  
+**README** - This File  
+**LICENCE** - GNU v3 Licence File  
 **.\PSFTP\psftp.exe** - Copy of PSFTP.exe [https://www.chiark.greenend.org.uk/~sgtatham/putty/]  
 **.\PSFTP\LICENCE.txt** - Licence file for PSFTP.exe  
 **.\Scheduled Task - Example\Xello Sims Student Sync.xml** - Example Scheduled Task to run the Sync  
 **.\Sims Report Definition** - Example\Xello Student Export.RptDef - Example Sims Report Definition to export the required data  
-**.\FTP Upload Files\** - Directory that will contain exported / processed data  
+**\FTP Upload Files\\** - Directory that will contain exported / processed data  
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ Extract the file structure from the Zip file to a chosen folder, keeping note of
 
 As long as is exports the required information, yes. Ensure the column names match those required in Students.csv and then set the variable $SimsReport to the name of your report.
 
-**I use a different MIS (e.g. CMIS) can I use this script?**
+**If use a different MIS (e.g. CMIS) can I use this script?**
 
 Currently the script only supports Sims however if there is a method for exporting data from your MIS then it should be fairly trivial to add compatibility for other MIS's. Depending on the availible output of this process you may need to add some error checking.  If you need any support with this then please get in touch.
 If you only need to process and upload am existing CSV file the just comment out ("#") the line that invokes CommandReporter.exe. 
