@@ -4,8 +4,10 @@ PowerShell Xello Automated Sync
 Version 1.0  
 Author: Mathew Slatter (Matt.Slatter@marplehall.stockport.sch.uk)  
 
- A collection of scripts and programs to automate the process of exporting Student information (currently only from Sims MIS), processing it to include additional information not available in Sims, and then syncing this to Xello over FTP.
-
+ A collection of scripts and programs to automate the process of exporting Student information (currently only from Sims MIS), processing it to include additional information not available in Sims, and then syncing this to Xello over FTP. Ensure you have read and followed the steps in the **Workflow for File-Based Data Integration** section on the [Xello Technical Knowledgebase](https://help.xello.world/article/940-tech-knowledge-base) before using this program.
+  
+**Note: Does not include optional columns _StateProvNumber_, _Password_ or _SSOStudentToken_**   
+    
 ## Contents
 
 **SIMS_XelloSync.ps1** - Powershell file containing Sync code  
@@ -21,7 +23,7 @@ Author: Mathew Slatter (Matt.Slatter@marplehall.stockport.sch.uk)
 
 	1. Sims must be installed on the devices that will be running the Sync. It can be a client or server (although I would recommend not the actual Sims Server)
 	2. A Sims user account capable of running the export. It must have "Third Party Reporting" + "Scheduled Reports" Group Permissions + something like "Class Teacher" so it has permissions to the required student data.
-	3. A School.csv file must have uploaded to Xello (https://help.xello.world/article/944-create-student-data-files)
+	3. A School.csv file must have uploaded to Xello [Xello - Create Student Data File](https://help.xello.world/article/944-create-student-data-files)
 
 ## Installation
 
