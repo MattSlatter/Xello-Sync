@@ -20,7 +20,7 @@ $SimsServer = "<hostname>\<SQL_instance_name>"           # SQL Sever Name (<host
 $SimsDatabase = "sims"                                   # Sims Database name (almost always "sims"). Can also be found in your $SimsDotDir\connect.ini file
 $SimsReport  =  "Xello Student Export"                   # Sims Xello Export Report name.This won't need changinf if you've inported the included "Xello Student Export.RptDef" report definition
 $OutFile = ".\FTP Upload Files\StudentExport.csv"        # Sims Export Filename
-$ftpLocation = 'ftp.xello.co.uk'                         # Xello FTP Host Address
+$ftpLocation = 'ftp.xello.co.uk'                         # Xello FTP Host Address (Probably won't change
 $ftpPort = '22'                                          # Xello FTP Port, currently port 22, SSH
 $ftpUser = 'Xello Username'                              # School Xello FTP Username, this is useually ther shool name  
 $ftpPassword = 'Xellow Password'                         # School Xello FTP Password. This will have been provided by Xello.
@@ -30,6 +30,8 @@ $FtpUploadFile = ".\FTP Upload Files\Student.csv"        # Processed file for up
 $PSFTP_Path = ".\PSFTP\psftp.exe"                        # PSFTP.exe file path
 $LogFile = ".\LastRunLog.txt"                            # Log file location - This file will contain log of commands run by PSFTP.exe and any errors during the last run ONLY of this script. 
 $SchoolCode = "SchoolCode"                               # School Code - Must match value contained in School.csv
+
+# Note: This script does not include the optional columns StateProvNumber, Password or SSOStudentToken
 
 # ---------------- Do not edit anything below this line ----------------
 
