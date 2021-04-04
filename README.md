@@ -6,7 +6,7 @@ Author: Mathew Slatter (Matt.Slatter@marplehall.stockport.sch.uk)
 
  A collection of scripts and programs to automate the process of exporting Student information (currently only from Sims MIS), processing it to include additional information not available in Sims, and then syncing this to Xello over FTP. Ensure you have read and followed the steps in the **Workflow for File-Based Data Integration** section on the [Xello Technical Knowledgebase](https://help.xello.world/article/940-tech-knowledge-base) before using this program.
   
-**Note: Does not include optional columns StateProvNumber, Password or SSOStudentToken**   
+**Note: Does not include optional columns _StateProvNumber_, _Password_ or _SSOStudentToken_**   
     
 ## Contents
 
