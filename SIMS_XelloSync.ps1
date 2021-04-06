@@ -18,17 +18,17 @@ $SimsUser = "Sims Username"                              # Sims Username Name - 
 $SimsPassword = "Sims Password"                          # Sims Password
 $SimsServer = "<hostname>\<SQL_instance_name>"           # SQL Sever Name (<hostname>\<SQL_instance_name>).  Can also be found in your $SimsDotDir\connect.ini file 
 $SimsDatabase = "sims"                                   # Sims Database name (almost always "sims"). Can also be found in your $SimsDotDir\connect.ini file
-$SimsReport  =  "Xello Student Export"                   # Sims Xello Export Report name.This won't need changinf if you've inported the included "Xello Student Export.RptDef" report definition
+$SimsReport  =  "Xello Student Export"                   # Sims Xello Export Report name. This won't need changing if you've imported the included "Xello Student Export.RptDef" report definition
 $OutFile = ".\FTP Upload Files\StudentExport.csv"        # Sims Export Filename
-$ftpLocation = 'ftp.xello.co.uk'                         # Xello FTP Host Address (Probably won't change
+$ftpLocation = 'ftp.xello.co.uk'                         # Xello FTP Host Address (Probably won't change)
 $ftpPort = '22'                                          # Xello FTP Port, currently port 22, SSH
-$ftpUser = 'Xello Username'                              # School Xello FTP Username, this is useually ther shool name  
+$ftpUser = 'Xello Username'                              # School Xello FTP Username, this is usually theyr school name  
 $ftpPassword = 'Xellow Password'                         # School Xello FTP Password. This will have been provided by Xello.
-$ftpGetCommandFile = '.\PSFTP\ftpGetCommands.txt'        # Temp file to store batch FTP command. There should be no need to change this but script required write permissions. 
+$ftpGetCommandFile = '.\PSFTP\ftpGetCommands.txt'        # Temp file to store batch FTP command. There should be no need to change this but script requires write permissions. 
 $SimsExportFile = '.\FTP Upload Files\StudentExport.csv' # File that contains export data from MIS Report. 
-$FtpUploadFile = ".\FTP Upload Files\Student.csv"        # Processed file for upload, should be called Student.csv. It inncludes required field not held in MIS (CurrentSchoolCode and PreRegSchoolCode) and corrects date format.
+$FtpUploadFile = ".\FTP Upload Files\Student.csv"        # Processed file for upload, should be called Student.csv. It includes required fields not held in MIS (CurrentSchoolCode and PreRegSchoolCode) and corrects date format.
 $PSFTP_Path = ".\PSFTP\psftp.exe"                        # PSFTP.exe file path
-$LogFile = ".\LastRunLog.txt"                            # Log file location - This file will contain log of commands run by PSFTP.exe and any errors during the last run ONLY of this script. 
+$LogFile = ".\LastRunLog.txt"                            # Log file location - This file will contain a log of commands run by PSFTP.exe and any errors ONLY during the last run of this script. 
 $SchoolCode = "SchoolCode"                               # School Code - Must match value contained in School.csv
 
 # Note: This script does not include the optional columns StateProvNumber, Password or SSOStudentToken
@@ -49,7 +49,7 @@ try{
     #If there is no error message then continue
     if($ErrorMessage -eq $Null){
 
-        # Write the batch FTP commands to temp file. This simplifies the running of PSFTP.exe below and ensure the values of $FtpUploadFile is respected on each run. 
+        # Write the batch FTP commands to temp file. This simplifies the running of PSFTP.exe below and ensures the values of $FtpUploadFile is respected on each run. 
         Set-Content -Path $ftpGetCommandFile -value ('put "' + $FtpUploadFile +'"')
         
         # Process $SimsExportFile to add the two required fields not held in MIS (CurrentSchoolCode and PreRegSchoolCode) and corrects date format. Outputs to $FtpUploadFile ready for FTP upload.
@@ -58,7 +58,7 @@ try{
         #  Builds required PSFTP argument list
         $FTP_Command =  "-P $ftpPort -l $ftpUser -pw $ftpPassword $ftpLocation -b $ftpGetCommandFile -bc -batch"
     
-        # Invokes PSFTP.exe with required arguments, capturing post the standard output and any errors (including some that are not errors!).
+        # Invokes PSFTP.exe with required arguments, capturing both the standard output and any errors (including some that are not errors!).
        $CommandOutput =  Invoke-Expression "$PSFTP_Path $FTP_Command" -ErrorVariable ErrorOutput 2>$null
    
        # We can't be sure if the command succeeded so we need to do some work to figure it out.
@@ -104,7 +104,7 @@ try{
         }
     }
 
-    #Check PSFTP $ErrorOutput for specific known error conditions. If any present then flag error and set appropriate $ErrorMessage
+    #Check PSFTP $ErrorOutput for specific known error conditions. If any are present then flag the error and set appropriate $ErrorMessage
     if($ErrorOutput -ne $null){
         if(($ErrorOutput | Select-String "Access denied") -ne $null){
             $IsError = $true
