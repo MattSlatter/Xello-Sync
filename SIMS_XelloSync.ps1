@@ -31,7 +31,7 @@ $PSFTP_Path = ".\PSFTP\psftp.exe"                        # PSFTP.exe file path
 $LogFile = ".\LastRunLog.txt"                            # Log file location - This file will contain a log of commands run by PSFTP.exe and any errors ONLY during the last run of this script. 
 $SchoolCode = "SchoolCode"                               # School Code - Must match value contained in School.csv
 
-# Note: This script does not include the optional columns StateProvNumber, Password or SSOStudentToken
+# Note: This script does not include the optional columns Password, ULN ID or SSOStudentToken
 
 # ---------------- Do not edit anything below this line ----------------
 
